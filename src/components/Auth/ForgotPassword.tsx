@@ -1,11 +1,9 @@
 // src/components/Auth/ForgotPassword.tsx
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 const ForgotPassword: React.FC = () => {
   const auth = useContext(AuthContext);
-  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
