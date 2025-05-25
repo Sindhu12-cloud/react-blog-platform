@@ -53,10 +53,10 @@ const Register: React.FC = () => {
           <button type="submit" style={styles.button}>Register</button>
         </form>
         <div style={styles.footer}>
-          <p>
+          {/* <p>
             Already have an account?{" "}
             <a href="/login" style={styles.link}>Login</a>
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

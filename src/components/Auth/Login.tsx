@@ -53,12 +53,12 @@ const Login: React.FC = () => {
           <button type="submit" style={styles.button}>Login</button>
         </form>
         <div style={styles.footer}>
-          <p>
+          {/* <p>
             Don't have an account? <a href="/register" style={styles.link}>Register</a>
-          </p>
-          <p>
+          </p> */}
+          {/* <p>
             <a href="/forgot-password" style={styles.link}>Forgot Password?</a>
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
