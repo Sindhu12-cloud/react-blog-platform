@@ -51,32 +51,125 @@ const AddEditBlog: React.FC = () => {
   };
 
   return (
-    <div>
-      <h2>{isEditMode ? "Edit Blog" : "Add New Blog"}</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title:</label><br />
-          <input
-            type="text"
-            value={title}
-            onChange={e => setTitle(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Content:</label><br />
-          <textarea
-            value={content}
-            onChange={e => setContent(e.target.value)}
-            rows={6}
-            required
-          />
-        </div>
-        <button type="submit">{isEditMode ? "Update" : "Create"} Blog</button>
-      </form>
+    <div style={styles.container}>
+      <div style={styles.card}>
+        <h2 style={styles.heading}>
+          {isEditMode ? "✏️ Edit Blog" : "📝 Add New Blog"}
+        </h2>
+
+        {error && <p style={styles.error}>{error}</p>}
+
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <div style={styles.inputGroup}>
+            <label style={styles.label}>Title</label>
+            <input
+              type="text"
+              value={title}
+              onChange={e => setTitle(e.target.value)}
+              required
+              style={styles.input}
+              placeholder="Enter blog title"
+            />
+          </div>
+
+          <div style={styles.inputGroup}>
+            <label style={styles.label}>Content</label>
+            <textarea
+              value={content}
+              onChange={e => setContent(e.target.value)}
+              rows={8}
+              required
+              style={styles.textarea}
+              placeholder="Write your blog content here..."
+            />
+          </div>
+
+          <button
+            type="submit"
+            style={isEditMode ? styles.updateButton : styles.createButton}
+          >
+            {isEditMode ? "Update Blog" : "Create Blog"}
+          </button>
+        </form>
+      </div>
     </div>
   );
+};
+
+const styles: { [key: string]: React.CSSProperties } = {
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    padding: "2rem",
+    backgroundColor: "#f9fafc",
+    minHeight: "100vh",
+  },
+  card: {
+    width: "100%",
+    maxWidth: "600px",
+    backgroundColor: "#fff",
+    padding: "2rem",
+    borderRadius: "12px",
+    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.05)",
+  },
+  heading: {
+    fontSize: "24px",
+    marginBottom: "1rem",
+    color: "#333",
+  },
+  error: {
+    color: "#e74c3c",
+    fontSize: "14px",
+    marginBottom: "1rem",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  inputGroup: {
+    marginBottom: "1.5rem",
+  },
+  label: {
+    marginBottom: "0.5rem",
+    fontWeight: 600,
+    display: "block",
+    color: "#444",
+  },
+  input: {
+    width: "100%",
+    padding: "10px",
+    borderRadius: "6px",
+    border: "1px solid #ccc",
+    fontSize: "16px",
+  },
+  textarea: {
+    width: "100%",
+    padding: "12px",
+    borderRadius: "6px",
+    border: "1px solid #ccc",
+    fontSize: "16px",
+    resize: "vertical",
+  },
+  createButton: {
+    padding: "12px",
+    backgroundColor: "#28a745",
+    color: "#fff",
+    border: "none",
+    borderRadius: "6px",
+    fontSize: "16px",
+    cursor: "pointer",
+    fontWeight: "bold",
+  },
+  updateButton: {
+    padding: "12px",
+    backgroundColor: "#007bff",
+    color: "#fff",
+    border: "none",
+    borderRadius: "6px",
+    fontSize: "16px",
+    cursor: "pointer",
+    fontWeight: "bold",
+  },
 };
 
 export default AddEditBlog;
