@@ -1,13 +1,14 @@
 // src/pages/NotFound.tsx
 import React from "react";
-import { Link } from "react-router-dom";
 
 const NotFound: React.FC = () => {
   return (
-    <div style={{ textAlign: "center", paddingTop: "3rem" }}>
-      <h1>404 - Page Not Found</h1>
-      <p>Oops! The page you're looking for doesn't exist.</p>
-      <Link to="/">Go back to Home</Link>
+    <div style={{ textAlign: "center", paddingTop: "4px" }}>
+      <img
+        src="https://contentfuel.co/wp-content/uploads/2019/12/All-Time_Best_Blogging_Platforms_to_Launch_Your_Company_s_Blog_Design.jpg"
+        alt="All-Time Best Blogging Platforms to Launch Your Company’s Blog"
+        style={{ maxWidth: "100%", height: "500px" }}
+      />
     </div>
   );
 };
